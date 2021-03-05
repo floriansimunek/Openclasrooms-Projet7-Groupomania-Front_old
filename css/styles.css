@@ -28,7 +28,6 @@ header h1 {
 .burger-menu {
   width: 50px;
   height: 50px;
-  border: 2px solid #FFF;
   border-radius: 5px;
   margin-left: 20px;
   display: flex;
@@ -36,11 +35,22 @@ header h1 {
   align-items: center;
   justify-content: space-evenly;
 }
+.burger-menu:active .burger-menu-line:first-child {
+  transform: rotate(-45deg) translate(-10px, 10px);
+}
+.burger-menu:active .burger-menu-line:last-child {
+  transform: rotate(45deg) translate(-8px, -9px);
+}
+.burger-menu:active .burger-menu-line:nth-child(2) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
 .burger-menu-line {
   width: 40px;
-  height: 2px;
+  height: 3px;
   background: #FFF;
   border-radius: 5px;
+  transition: all 0.5s ease;
 }
 
 /* Home */
