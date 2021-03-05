@@ -1,3 +1,8 @@
+/* Variables */
+$light-blue: #84828F;
+$dark-blue: #3E4C5E;
+$darker-blue: #2C3D55;
+
 /* ALL */
 *{
     margin: 0;
@@ -5,11 +10,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Variables */
-$light-blue: #84828F;
-$dark-blue: #3E4C5E;
-$darker-blue: #2C3D55;
-
+body{
+    background-color: rgba(44, 61, 85, .05);
+}
 
 /* Header */
 header{
@@ -20,7 +23,32 @@ header{
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
+    h1{
+        margin-right: 60px;
+    }
+}
+
+/* Burger Menu */
+.burger-menu{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    margin-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &-line{
+        width: 40px;
+        height: 2px;
+        background: #FFF;
+        border-radius: 5px;
+    }
 }
 
 /* Home */
