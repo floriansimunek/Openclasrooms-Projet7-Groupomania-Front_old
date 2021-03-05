@@ -56,6 +56,10 @@ header{
         }
     }
 
+    &:active + #navigation-bar{
+        transform: translate(0px, 470px);
+    }
+
     &-line{
         width: 40px;
         height: 3px;
@@ -64,6 +68,20 @@ header{
         transition: all 0.5s ease;
     }
 }
+
+#navigation-bar{
+    background: black;
+    width: 350px;
+    height: 92%;
+    position: absolute;
+    transform: translate(-500px, 470px);
+    transition: all 0.5s ease;    
+    li{
+        color: #fff;
+        padding: 10px 0;
+    }
+}
+
 
 /* Home */
 #home{
