@@ -34,21 +34,24 @@ header h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  /*&:active{
+      .burger-menu-line:first-child{
+          transform: rotate(-45deg) translate(-10px, 10px);
+      }
+      .burger-menu-line:last-child{
+          transform: rotate(45deg) translate(-8px, -9px);
+      }
+      .burger-menu-line:nth-child(2){
+          opacity: 0;
+          transform: rotate(0deg) scale(0.2, 0.2);
+      }
+  }
+
+  &:active + #navigation-bar{
+      transform: translate(0px, 0);
+  }*/
 }
-.burger-menu:active .burger-menu-line:first-child {
-  transform: rotate(-45deg) translate(-10px, 10px);
-}
-.burger-menu:active .burger-menu-line:last-child {
-  transform: rotate(45deg) translate(-8px, -9px);
-}
-.burger-menu:active .burger-menu-line:nth-child(2) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-.burger-menu:active + #navigation-bar {
-  transform: translate(0px, 470px);
-}
-.burger-menu-line {
+.burger-menu-line__1, .burger-menu-line__2, .burger-menu-line__3 {
   width: 40px;
   height: 3px;
   background: #FFF;
@@ -56,17 +59,44 @@ header h1 {
   transition: all 0.5s ease;
 }
 
-#navigation-bar {
-  background: black;
-  width: 350px;
-  height: 92%;
+input {
+  display: block;
+  width: 50px;
+  height: 50px;
   position: absolute;
-  transform: translate(-500px, 470px);
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  margin-left: 20px;
+}
+input:checked + .burger-menu .burger-menu-line__1 {
+  transform: rotate(-45deg) translate(-10px, 10px);
+}
+input:checked + .burger-menu .burger-menu-line__2 {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+input:checked + .burger-menu .burger-menu-line__3 {
+  transform: rotate(45deg) translate(-8px, -9px);
+}
+input:checked ~ #navigation-bar {
+  transform: translate(0px, 0);
+}
+
+#navigation-bar {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 75px);
+  left: 0px;
+  top: 75px;
+  background: #3E4C5E;
+  transform: translate(-500px, 0);
   transition: all 0.5s ease;
 }
 #navigation-bar li {
   color: #fff;
   padding: 10px 0;
+  list-style: none;
 }
 
 /* Home */
