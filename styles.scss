@@ -36,7 +36,6 @@ header{
 .burger-menu{
     width: 50px;
     height: 50px;
-    //border: 2px solid #FFF;
     border-radius: 5px;
     margin-left: 20px;
 
@@ -55,6 +54,7 @@ header{
         transition: all 0.5s ease;
     }
 }
+
 input{
     display:block;
     width: 50px;
@@ -67,15 +67,17 @@ input{
 
     &:checked{
         + .burger-menu{
-            .burger-menu-line__1{
-                transform: rotate(-45deg) translate(-10px, 10px);
-            }
-            .burger-menu-line__2{
-                opacity: 0;
-                transform: rotate(0deg) scale(0.2, 0.2);
-            }
-            .burger-menu-line__3{
-                transform: rotate(45deg) translate(-8px, -9px);
+            .burger-menu-line{
+                &__1{
+                    transform: rotate(-45deg) translate(-10px, 10px);
+                }
+                &__2{
+                    opacity: 0;
+                    transform: rotate(0deg) scale(0.2, 0.2);
+                }
+                &__3{
+                    transform: rotate(45deg) translate(-8px, -9px);
+                }
             }
         }
 
@@ -92,7 +94,7 @@ input{
     left: 0px;
     top: 75px;
     background: $dark-blue;
-    //transform: translate(-100vh, 0);
+    transform: translate(-100vh, 0);
     transition: all 0.5s ease-in-out;
 
     #user{
