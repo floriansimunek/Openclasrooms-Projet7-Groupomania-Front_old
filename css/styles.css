@@ -74,7 +74,6 @@ input:checked ~ #navigation-bar {
   left: 0px;
   top: 75px;
   background: #3E4C5E;
-  transform: translate(-100vh, 0);
   transition: all 0.5s ease-in-out;
 }
 #navigation-bar #user {
@@ -95,6 +94,16 @@ input:checked ~ #navigation-bar {
   width: 330px;
   height: 1px;
   background-color: #84828F;
+}
+#navigation-bar #favs {
+  margin: 20px;
+  list-style: none;
+}
+#navigation-bar #favs li {
+  background: #84828F;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 7px 10px;
 }
 
 /* Home */

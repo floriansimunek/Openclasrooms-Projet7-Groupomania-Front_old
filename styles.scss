@@ -92,7 +92,7 @@ input{
     left: 0px;
     top: 75px;
     background: $dark-blue;
-    transform: translate(-100vh, 0);
+    //transform: translate(-100vh, 0);
     transition: all 0.5s ease-in-out;
 
     #user{
@@ -115,6 +115,18 @@ input{
         width: 330px;
         height: 1px;
         background-color: $light-blue;
+    }
+
+    #favs{
+        margin: 20px;
+        list-style: none;
+
+        li{
+            background: $light-blue;
+            border-radius: 5px;
+            margin-top: 10px;
+            padding: 7px 10px;
+        }
     }
 }
 
