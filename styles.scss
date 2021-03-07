@@ -58,13 +58,19 @@ header{
         line-height: 1.3em;
         margin: 0 10px;
 
-        &:last-child{
+        &:nth-child(2){
             text-align: right;
         }
     }
 }
 
 #threads{
+    a{
+        text-decoration: none;
+        color: #FFF;
+        
+    }
+
     .thread-in-sub{
         width: 90%;
         margin: 10px auto;
@@ -73,9 +79,49 @@ header{
         background: $transparent-light-blue;
         color: #FFF;
 
+        &:hover{
+            background: $light-blue;
+        }
+
         p{
             margin: auto 5px;
             padding-top: 10px;
+        }
+    }
+}
+
+/* Post Line */
+#post-line{
+    #user-text-post{
+        width: 90%;
+        margin: 10px auto;
+        background: #FFF;
+        border-radius: 5px;
+        padding: 5px 0;
+
+        p{
+            margin: 10px;
+            text-align: justify;
+        }
+
+        .separation-line{
+            width: 300px;
+        }
+
+        #buttons{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            margin: 15px 0;
+
+            .button{
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: 5px 10px;
+                width: 70px;
+                text-align: center;
+            }
         }
     }
 }
@@ -159,14 +205,6 @@ input{
         }
     }
 
-    .separation-line{
-        display: block;
-        margin: 0 auto;
-        width: 330px;
-        height: 1px;
-        background-color: $light-blue;
-    }
-
     #favs{
         margin: 20px;
         list-style: none;
@@ -188,6 +226,14 @@ input{
         }
 
     }
+}
+
+.separation-line{
+    display: block;
+    margin: 0 auto;
+    width: 330px;
+    height: 1px;
+    background-color: $light-blue;
 }
 
 

@@ -45,10 +45,14 @@ header h1 a {
   line-height: 1.3em;
   margin: 0 10px;
 }
-#informations-bar p:last-child {
+#informations-bar p:nth-child(2) {
   text-align: right;
 }
 
+#threads a {
+  text-decoration: none;
+  color: #FFF;
+}
 #threads .thread-in-sub {
   width: 90%;
   margin: 10px auto;
@@ -57,9 +61,41 @@ header h1 a {
   background: #84828F80;
   color: #FFF;
 }
+#threads .thread-in-sub:hover {
+  background: #84828F;
+}
 #threads .thread-in-sub p {
   margin: auto 5px;
   padding-top: 10px;
+}
+
+/* Post Line */
+#post-line #user-text-post {
+  width: 90%;
+  margin: 10px auto;
+  background: #FFF;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+#post-line #user-text-post p {
+  margin: 10px;
+  text-align: justify;
+}
+#post-line #user-text-post .separation-line {
+  width: 300px;
+}
+#post-line #user-text-post #buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+#post-line #user-text-post #buttons .button {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 70px;
+  text-align: center;
 }
 
 /* Burger Menu */
@@ -127,13 +163,6 @@ input:checked ~ #navigation-bar {
   border-radius: 50%;
   transform: translate(0, 2px);
 }
-#navigation-bar .separation-line {
-  display: block;
-  margin: 0 auto;
-  width: 330px;
-  height: 1px;
-  background-color: #84828F;
-}
 #navigation-bar #favs {
   margin: 20px;
   list-style: none;
@@ -150,6 +179,14 @@ input:checked ~ #navigation-bar {
 }
 #navigation-bar #favs li:hover {
   background: #84828F80;
+}
+
+.separation-line {
+  display: block;
+  margin: 0 auto;
+  width: 330px;
+  height: 1px;
+  background-color: #84828F;
 }
 
 /* Home */
