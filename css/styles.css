@@ -26,6 +26,11 @@ header {
 header h1 {
   margin-right: 60px;
 }
+@media screen and (min-width: 992px) {
+  header h1 {
+    margin-left: 20px;
+  }
+}
 header h1 a {
   text-decoration: none;
   color: #FFF;
@@ -40,6 +45,11 @@ header h1 a {
   justify-content: space-between;
   margin-top: 75px;
 }
+@media screen and (min-width: 992px) {
+  #informations-bar {
+    margin-left: 350px;
+  }
+}
 #informations-bar p {
   color: #FFF;
   line-height: 1.3em;
@@ -49,6 +59,11 @@ header h1 a {
   text-align: right;
 }
 
+@media screen and (min-width: 992px) {
+  #threads {
+    margin-left: 350px;
+  }
+}
 #threads a {
   text-decoration: none;
   color: #FFF;
@@ -70,12 +85,22 @@ header h1 a {
 }
 
 /* Post Line */
+@media screen and (min-width: 992px) {
+  #post-line {
+    margin-left: 350px;
+  }
+}
 #post-line #user-text-post {
   width: 90%;
   margin: 10px auto;
   background: #FFF;
   border-radius: 5px;
   padding: 5px 0;
+}
+@media screen and (min-width: 992px) {
+  #post-line #user-text-post {
+    width: 60%;
+  }
 }
 #post-line #user-text-post p {
   margin: 10px;
@@ -90,6 +115,12 @@ header h1 a {
   justify-content: space-around;
   margin: 15px 0;
 }
+@media screen and (min-width: 992px) {
+  #post-line #user-text-post #buttons {
+    justify-content: left;
+    margin-left: 15px;
+  }
+}
 #post-line #user-text-post #buttons .button {
   border: 1px solid black;
   border-radius: 5px;
@@ -97,8 +128,18 @@ header h1 a {
   width: 70px;
   text-align: center;
 }
+@media screen and (min-width: 992px) {
+  #post-line #user-text-post #buttons .button {
+    margin: 0 5px;
+  }
+}
 
 /* Comments */
+@media screen and (min-width: 992px) {
+  #comments {
+    padding-left: 20px;
+  }
+}
 #comments .post-comment {
   width: 90%;
   margin: 15px auto;
@@ -107,16 +148,32 @@ header h1 a {
   background: #FFF;
   padding: 5px 0;
 }
+@media screen and (min-width: 992px) {
+  #comments .post-comment {
+    width: 60%;
+    margin-right: auto;
+  }
+}
 #comments .post-comment .comment-infos {
   display: flex;
   margin: 15px auto;
   justify-content: space-around;
   align-items: center;
 }
+@media screen and (min-width: 992px) {
+  #comments .post-comment .comment-infos {
+    justify-content: left;
+  }
+}
 #comments .post-comment .comment-infos .profile-picture {
   width: 50px;
   height: 50px;
   background: gray;
+}
+@media screen and (min-width: 992px) {
+  #comments .post-comment .comment-infos .profile-picture {
+    margin: 0 15px;
+  }
 }
 #comments .post-comment .comment-text {
   margin: 10px;
@@ -133,6 +190,11 @@ header h1 a {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+@media screen and (min-width: 992px) {
+  .burger-menu {
+    display: none;
+  }
 }
 .burger-menu-line__1, .burger-menu-line__2, .burger-menu-line__3 {
   width: 40px;
@@ -175,6 +237,15 @@ input:checked ~ #navigation-bar {
   background: #3E4C5E;
   transform: translate(-100vh, 0);
   transition: all 0.5s ease-in-out;
+}
+@media screen and (min-width: 992px) {
+  #navigation-bar {
+    transform: translate(0, 0);
+    width: 350px;
+    position: fixed;
+    left: 0;
+    top: 75px;
+  }
 }
 #navigation-bar #user {
   margin: 20px;
@@ -221,6 +292,7 @@ input:checked ~ #navigation-bar {
   justify-content: center;
 }
 #home-message {
+  margin-left: 350px;
   margin-top: 300px;
   text-align: center;
   font-weight: bold;

@@ -35,6 +35,10 @@ header{
     h1{
         margin-right: 60px;
 
+        @media screen and (min-width: 992px) {
+            margin-left: 20px;        
+        }
+
         a{
             text-decoration: none;
             color: #FFF;
@@ -52,6 +56,10 @@ header{
     justify-content: space-between;
 
     margin-top: 75px;
+    
+    @media screen and(min-width: 992px) {
+        margin-left: 350px;
+    }
 
     p{
         color: #FFF;
@@ -65,6 +73,10 @@ header{
 }
 
 #threads{
+    @media screen and(min-width: 992px) {
+        margin-left: 350px;
+    }
+
     a{
         text-decoration: none;
         color: #FFF;
@@ -92,12 +104,20 @@ header{
 
 /* Post Line */
 #post-line{
+    @media screen and(min-width: 992px) {
+        margin-left: 350px;
+    }
+
     #user-text-post{
         width: 90%;
         margin: 10px auto;
         background: #FFF;
         border-radius: 5px;
         padding: 5px 0;
+
+        @media screen and(min-width: 992px) {
+            width: 60%;
+        }
 
         p{
             margin: 10px;
@@ -115,12 +135,21 @@ header{
 
             margin: 15px 0;
 
+            @media screen and(min-width: 992px) {
+                justify-content: left;
+                margin-left: 15px;
+            }
+
             .button{
                 border: 1px solid black;
                 border-radius: 5px;
                 padding: 5px 10px;
                 width: 70px;
                 text-align: center;
+
+                @media screen and(min-width: 992px) {
+                    margin: 0 5px;
+                }
             }
         }
     }
@@ -128,6 +157,10 @@ header{
 
 /* Comments */
 #comments{
+    @media screen and(min-width: 992px) {
+        padding-left: 20px;               
+    }
+
     .post-comment{
         width: 90%;
         margin: 15px auto;
@@ -135,6 +168,11 @@ header{
         border-radius: 5px;
         background: #FFF;
         padding: 5px 0;
+
+        @media screen and(min-width: 992px) {
+            width: 60%;
+            margin-right: auto;
+        }
         
         .comment-infos{
             display: flex;
@@ -142,10 +180,18 @@ header{
             justify-content: space-around;
             align-items: center;
 
+            @media screen and(min-width: 992px) {
+                justify-content: left;
+            }
+
             .profile-picture{
                 width: 50px;
                 height: 50px;
                 background: gray;
+
+                @media screen and(min-width: 992px) {
+                    margin: 0 15px;
+                }
             }
 
         }
@@ -168,6 +214,10 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+
+    @media screen and (min-width: 992px) {
+        display: none;
+    }
 
     &-line__1,
     &-line__2,
@@ -222,6 +272,14 @@ input{
     transform: translate(-100vh, 0);
     transition: all 0.5s ease-in-out;
 
+    @media screen and (min-width: 992px){
+        transform: translate(0, 0);
+        width: 350px;
+        position: fixed;
+        left: 0;
+        top: 75px;
+    }
+
     #user{
         margin: 20px;
         line-height: 1.5em;
@@ -275,6 +333,7 @@ input{
     justify-content: center;
 
     &-message{
+        margin-left: 350px;
         margin-top:300px;
         text-align: center;
         font-weight: bold;
