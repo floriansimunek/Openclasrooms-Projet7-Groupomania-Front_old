@@ -11,10 +11,22 @@ $screen-height-size: calc(100vh - 75px);
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 body{
     background-color: rgba(44, 61, 85, .05);
+    padding-top: 75px;
+    @media screen and (min-width: 992px){
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        grid-template-rows: 75px 1fr;
+        grid-template-areas: 
+        "header header"
+        "sidebar main";
+        max-height: 100vh;
+        padding-top: 0;
+    }
 }
 
 /* Header */
@@ -31,6 +43,12 @@ header{
     position: fixed;
     top: 0;
     left: 0;
+    padding-left: 100px;
+
+    @media screen and (min-width: 992px){
+        grid-area: header;
+        padding-left: 0;
+    }
 
     h1{
         margin-right: 60px;
@@ -54,11 +72,9 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    margin-top: 75px;
     
     @media screen and(min-width: 992px) {
-        margin-left: 350px;
+        //margin-left: 350px;
     }
 
     p{
@@ -74,7 +90,7 @@ header{
 
 #threads{
     @media screen and(min-width: 992px) {
-        margin-left: 350px;
+        //margin-left: 350px;
     }
 
     a{
@@ -105,7 +121,7 @@ header{
 /* Post Line */
 #post-line{
     @media screen and(min-width: 992px) {
-        margin-left: 350px;
+        //margin-left: 350px;
     }
 
     #user-text-post{
@@ -208,12 +224,14 @@ header{
     width: 50px;
     height: 50px;
     border-radius: 5px;
-    margin-left: 20px;
+    left: 20px;
+    top: 12px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    position: fixed;
 
     @media screen and (min-width: 992px) {
         display: none;
@@ -234,11 +252,16 @@ input{
     display:block;
     width: 50px;
     height: 50px;
-    position: absolute;
+    position: fixed;
     cursor: pointer;
     opacity: 0;
     z-index: 2;
-    margin-left: 20px;
+    left: 20px;
+    top: 12px;
+
+    @media screen and (min-width: 992px){
+        display: none;
+    }
 
     &:checked{
         + .burger-menu{
@@ -263,7 +286,7 @@ input{
 }
 
 #navigation-bar{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: $screen-height-size;
     left: 0px;
@@ -271,18 +294,19 @@ input{
     background: $dark-blue;
     transform: translate(-100vh, 0);
     transition: all 0.5s ease-in-out;
+    padding: 20px;
+    color: #FFF;
 
     @media screen and (min-width: 992px){
-        transform: translate(0, 0);
+        transform: initial;
         width: 350px;
-        position: fixed;
-        left: 0;
-        top: 75px;
+        position: static;
+        grid-area: sidebar;
     }
 
     #user{
-        margin: 20px;
         line-height: 1.5em;
+        margin-bottom: 20px;;
 
         #connection-state{
             display: inline-block;
@@ -295,8 +319,8 @@ input{
     }
 
     #favs{
-        margin: 20px;
         list-style: none;
+        margin-top: 20px; 
 
         a{
             text-decoration: none;
@@ -333,11 +357,19 @@ input{
     justify-content: center;
 
     &-message{
-        margin-left: 350px;
-        margin-top:300px;
+        @media screen and(min-width: 992px) {
+            //margin-left: 350px;
+        }
         text-align: center;
         font-weight: bold;
         font-size: 18px;
         color: $darker-blue;
+    }
+}
+
+main{
+    @media screen and (min-width:992px){
+        grid-area: main;
+        overflow-y: scroll;
     }
 }

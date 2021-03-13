@@ -4,10 +4,22 @@
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
   background-color: rgba(44, 61, 85, 0.05);
+  padding-top: 75px;
+}
+@media screen and (min-width: 992px) {
+  body {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 75px 1fr;
+    grid-template-areas: "header header" "sidebar main";
+    max-height: 100vh;
+    padding-top: 0;
+  }
 }
 
 /* Header */
@@ -22,6 +34,13 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  padding-left: 100px;
+}
+@media screen and (min-width: 992px) {
+  header {
+    grid-area: header;
+    padding-left: 0;
+  }
 }
 header h1 {
   margin-right: 60px;
@@ -43,12 +62,6 @@ header h1 a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 75px;
-}
-@media screen and (min-width: 992px) {
-  #informations-bar {
-    margin-left: 350px;
-  }
 }
 #informations-bar p {
   color: #FFF;
@@ -59,11 +72,6 @@ header h1 a {
   text-align: right;
 }
 
-@media screen and (min-width: 992px) {
-  #threads {
-    margin-left: 350px;
-  }
-}
 #threads a {
   text-decoration: none;
   color: #FFF;
@@ -85,11 +93,6 @@ header h1 a {
 }
 
 /* Post Line */
-@media screen and (min-width: 992px) {
-  #post-line {
-    margin-left: 350px;
-  }
-}
 #post-line #user-text-post {
   width: 90%;
   margin: 10px auto;
@@ -185,11 +188,13 @@ header h1 a {
   width: 50px;
   height: 50px;
   border-radius: 5px;
-  margin-left: 20px;
+  left: 20px;
+  top: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  position: fixed;
 }
 @media screen and (min-width: 992px) {
   .burger-menu {
@@ -208,11 +213,17 @@ input {
   display: block;
   width: 50px;
   height: 50px;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   opacity: 0;
   z-index: 2;
-  margin-left: 20px;
+  left: 20px;
+  top: 12px;
+}
+@media screen and (min-width: 992px) {
+  input {
+    display: none;
+  }
 }
 input:checked + .burger-menu .burger-menu-line__1 {
   transform: rotate(-45deg) translate(-10px, 10px);
@@ -229,7 +240,7 @@ input:checked ~ #navigation-bar {
 }
 
 #navigation-bar {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: calc(100vh - 75px);
   left: 0px;
@@ -237,19 +248,20 @@ input:checked ~ #navigation-bar {
   background: #3E4C5E;
   transform: translate(-100vh, 0);
   transition: all 0.5s ease-in-out;
+  padding: 20px;
+  color: #FFF;
 }
 @media screen and (min-width: 992px) {
   #navigation-bar {
-    transform: translate(0, 0);
+    transform: initial;
     width: 350px;
-    position: fixed;
-    left: 0;
-    top: 75px;
+    position: static;
+    grid-area: sidebar;
   }
 }
 #navigation-bar #user {
-  margin: 20px;
   line-height: 1.5em;
+  margin-bottom: 20px;
 }
 #navigation-bar #user #connection-state {
   display: inline-block;
@@ -260,8 +272,8 @@ input:checked ~ #navigation-bar {
   transform: translate(0, 2px);
 }
 #navigation-bar #favs {
-  margin: 20px;
   list-style: none;
+  margin-top: 20px;
 }
 #navigation-bar #favs a {
   text-decoration: none;
@@ -292,12 +304,16 @@ input:checked ~ #navigation-bar {
   justify-content: center;
 }
 #home-message {
-  margin-left: 350px;
-  margin-top: 300px;
   text-align: center;
   font-weight: bold;
   font-size: 18px;
   color: #2C3D55;
+}
+@media screen and (min-width: 992px) {
+  main {
+    grid-area: main;
+    overflow-y: scroll;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
