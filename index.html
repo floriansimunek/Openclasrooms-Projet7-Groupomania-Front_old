@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Groupomania</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,7 +23,7 @@
 
     <div id="navigation-bar">
         <div id="user">
-            <p id="user-infos">Florian<br>u/Flo_SMNK • Connecté <span id="connection-state"></span></p>
+            <p id="user-infos">{{ username }}<br>u/Flo_SMNK • Connecté <span id="connection-state"></span></p>
         </div>
         <span class="separation-line"></span>
         <ul id="favs">
